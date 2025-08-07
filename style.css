@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #f8f9fa;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  background-image: url('images/pattern-randomized.svg'); /* ajuste no caminho da imagem */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.a4-page {
+  width: 100%;
+  max-width: 900px;
+  min-height: 100vh;
+  background-color: #7ddbfa82;
+  padding: 32px 16px;
+  box-shadow: 0 0 90px #ffe76ddc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  color: #000;
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.projeto img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.projeto img:hover {
+  box-shadow: 0 0 16px #00ffff88;
+  transform: scale(1.03);
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.9em;
+  text-align: center;
+  color: #707070;
+}
+
+footer a {
+  color: #0077b6;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: #023e8a;
+}
+
+.foto-perfil {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 60%;
+  border: 2px solid #000000ea;
+  margin: auto 16px;
+  display: block;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.foto-perfil:hover {
+  box-shadow: 0 0 16px #00ffff88;
+  transform: scale(1.03);
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.info-perfil h1 {
+  margin: 0;
+  font-size: 2em;
+  color: #000;
+}
+
+.info-perfil p {
+  margin: 5px 0 0;
+  color: #333;
+}
+
+a:focus, button:focus {
+  outline: 2px solid #ffe66d;
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .a4-page {
+    max-width: 98vw;
+    padding: 12px 2vw;
+  }
+  .cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .a4-page {
+    padding: 8px 2vw;
+    box-shadow: 0 0 30px #ffe66d;
+    border-radius: 0;
+    min-height: 100vh;
+  }
+  .cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .foto-perfil {
+    width: 100px;
+    height: 100px;
+    margin: 0 0 8px 0;
+  }
+  .galeria {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  h1 {
+    font-size: 1.3em;
+  }
+  h2 {
+    font-size: 1.1em;
+  }
+  .info-perfil p {
+    font-size: 0.95em;
+  }
+  p, .projeto p {
+    font-size: 1em;
+  }
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.social i {
+  font-size: 1.2em;
+}
+
+.social.instagram { background-color: #e4405f; }
+.social.facebook { background-color: #1877f2; }
+.social.linkedin { background-color: #0077b5; }
+.social.twitter { background-color: #000; }
+.social.github { background-color: #333; }
+
+.social:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 600px) {
+  .social {
+    font-size: 0.9em;
+    padding: 8px 16px;
+  }
+}
+
+/* Estilo base dos botões sociais (como Instagram) */
+.social-button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo específico para o botão Fake News */
+.fake-news {
+    background-color: #555555;    /* Cinza escuro */
+    color: white;
+}
+
+.fake-news:hover {
+    background-color: #333333;    /* Cinza mais escuro no hover */
+    transform: translateY(-2px);
+}
+
+
