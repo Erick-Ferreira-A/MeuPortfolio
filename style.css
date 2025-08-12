@@ -1,188 +1,247 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
 
+/* Adicionando variáveis CSS para fácil manutenção */
+:root {
+    --primary-color: #0056b3; /* Azul mais formal para links */
+    --accent-color: #007bff;
+    --background-color: #f0f2f5; /* Fundo cinza claro para a página */
+    --page-background: #ffffff; /* Fundo branco para a página principal */
+    --text-color-primary: #333333;
+    --text-color-secondary: #555555;
+    --border-color: #dddddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
 body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  background-color: #f8f9fa;
-  color: #222;
-  display: flex;
-  justify-content: center;
-  padding: 40px;
-  background-image: url('images/pattern-randomized.svg'); /* ajuste no caminho da imagem */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: var(--page-background); /* Fundo branco para o corpo da página */
+    color: var(--text-color-primary);
+    display: flex;
+    justify-content: center;
+    /* Removido o padding do body para usar a largura total */
+    min-height: 100vh;
 }
 
-.a4-page {
-  width: 100%;
-  max-width: 900px;
-  min-height: 100vh;
-  background-color: #7ddbfa82;
-  padding: 32px 16px;
-  box-shadow: 0 0 90px #ffe76ddc;
-  border-radius: 8px;
-  box-sizing: border-box;
+.main-container {
+    width: 100%;
+    max-width: 900px;
+    padding: 32px 16px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    background-color: var(--background-color);
 }
 
-h1, h2 {
-  color: #000;
-  margin-bottom: 10px;
-}
-
-p {
-  line-height: 1.6;
-}
-
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-}
-
-.projeto img {
-  width: 100%;
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
-  transition: box-shadow 0.3s, transform 0.3s;
-}
-
-.projeto img:hover {
-  box-shadow: 0 0 16px #00ffff88;
-  transform: scale(1.03);
-}
-
-footer {
-  margin-top: 40px;
-  font-size: 0.9em;
-  text-align: center;
-  color: #707070;
-}
-
-footer a {
-  color: #0077b6;
-  text-decoration: underline;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-footer a:hover {
-  color: #023e8a;
+/* Estilos aprimorados para o cabeçalho */
+.cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 24px; /* Aumenta o espaçamento entre a foto e o texto */
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .foto-perfil {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 60%;
-  border: 2px solid #000000ea;
-  margin: auto 16px;
-  display: block;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  transition: box-shadow 0.3s, transform 0.3s;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    margin: 0;
+    display: block;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .foto-perfil:hover {
-  box-shadow: 0 0 16px #00ffff88;
-  transform: scale(1.03);
-}
-
-.cabecalho {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
 }
 
 .info-perfil h1 {
-  margin: 0;
-  font-size: 2em;
-  color: #000;
+    margin: 0;
+    font-size: 2.5em;
+    color: var(--text-color-primary);
+    font-weight: 700;
 }
 
 .info-perfil p {
-  margin: 5px 0 0;
-  color: #333;
+    margin: 5px 0 0;
+    color: var(--text-color-secondary);
+    font-weight: 500;
 }
 
+/* Estilos para parágrafos */
+.paragrafo-sobre, .paragrafo-projeto, li {
+    text-indent: 2em;
+    text-align: justify;
+    line-height: 1.5; /* Espaçamento entre as linhas */
+    margin-bottom: 1.5rem; /* Margem inferior para separar os parágrafos */
+}
+
+.projeto-item {
+    margin-bottom: 24px;
+}
+
+.links-projeto {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.projeto img {
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 0 8px var(--shadow-color);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.projeto img:hover {
+    box-shadow: 0 0 16px rgba(0, 255, 255, 0.3);
+    transform: scale(1.03);
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.9em;
+    text-align: center;
+    color: var(--text-color-secondary);
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: #023e8a;
+}
+
+/* Estilo para o separador de seção */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 32px 0;
+}
+
+/* Estilos dos tópicos */
+section {
+    padding-top: 24px;
+    margin: 0 1rem; /* Margem nas laterais para afastar o conteúdo */
+}
+
+h1, h2 {
+    color: var(--text-color-primary);
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+}
+
+
 a:focus, button:focus {
-  outline: 2px solid #ffe66d;
-  outline-offset: 2px;
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 @media (max-width: 900px) {
-  .a4-page {
-    max-width: 98vw;
-    padding: 12px 2vw;
-  }
-  .cabecalho {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
+    .main-container {
+        max-width: 98vw;
+        padding: 12px 2vw;
+    }
+    .cabecalho {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        text-align: center;
+    }
+    .info-perfil h1 {
+        font-size: 2em;
+    }
+    .foto-perfil {
+        margin: 0;
+    }
+    section {
+        margin: 0;
+    }
 }
 
 @media (max-width: 600px) {
-  .a4-page {
-    padding: 8px 2vw;
-    box-shadow: 0 0 30px #ffe66d;
-    border-radius: 0;
-    min-height: 100vh;
-  }
-  .cabecalho {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 16px;
-  }
-  .foto-perfil {
-    width: 100px;
-    height: 100px;
-    margin: 0 0 8px 0;
-  }
-  .galeria {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  h1 {
-    font-size: 1.3em;
-  }
-  h2 {
-    font-size: 1.1em;
-  }
-  .info-perfil p {
-    font-size: 0.95em;
-  }
-  p, .projeto p {
-    font-size: 1em;
-  }
+    .main-container {
+        padding: 8px 2vw;
+        box-shadow: none;
+        border-radius: 0;
+        min-height: 100vh;
+    }
+    .cabecalho {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+    .foto-perfil {
+        width: 100px;
+        height: 100px;
+        margin: 0 0 8px 0;
+    }
+    .galeria {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    h1 {
+        font-size: 1.3em;
+    }
+    h2 {
+        font-size: 1.1em;
+    }
+    .info-perfil p {
+        font-size: 0.95em;
+    }
+    p, .projeto p {
+        font-size: 1em;
+    }
 }
 
 .social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .social {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 1em;
-  transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .social i {
-  font-size: 1.2em;
+    font-size: 1.2em;
 }
 
+/* Cores das redes sociais */
 .social.instagram { background-color: #e4405f; }
 .social.facebook { background-color: #1877f2; }
 .social.linkedin { background-color: #0077b5; }
@@ -190,20 +249,22 @@ a:focus, button:focus {
 .social.github { background-color: #333; }
 
 .social:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 @media (max-width: 600px) {
-  .social {
-    font-size: 0.9em;
-    padding: 8px 16px;
-  }
+    .social {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
 }
 
-/* Estilo base dos botões sociais (como Instagram) */
+/* Estilo base para os botões de projeto */
 .social-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 12px 24px;
     border-radius: 12px;
     text-decoration: none;
@@ -211,18 +272,26 @@ a:focus, button:focus {
     font-size: 16px;
     font-family: Arial, sans-serif;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo específico para o botão Fake News */
-.fake-news {
-    background-color: #555555;    /* Cinza escuro */
+    box-shadow: 0 4px 8px var(--shadow-color);
     color: white;
 }
 
-.fake-news:hover {
-    background-color: #333333;    /* Cinza mais escuro no hover */
+/* Estilo específico para o botão de projeto */
+.social-button.fake-news {
+    background-color: #555555;
+}
+
+.social-button.fake-news:hover {
+    background-color: #333333;
     transform: translateY(-2px);
 }
 
+/* Estilo para o novo botão do GitHub no projeto */
+.social-button.github {
+    background-color: #333;
+}
 
+.social-button.github:hover {
+    background-color: #000;
+    transform: translateY(-2px);
+}
