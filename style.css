@@ -10,6 +10,7 @@
     --text-color-secondary: #555555;
     --border-color: #dddddd;
     --shadow-color: rgba(0, 0, 0, 0.1);
+    --trabalho-color: #0059b3; /* Cor azul da carteira de trabalho */
 }
 
 body {
@@ -19,7 +20,6 @@ body {
     color: var(--text-color-primary);
     display: flex;
     justify-content: center;
-    /* Removido o padding do body para usar a largura total */
     min-height: 100vh;
 }
 
@@ -35,7 +35,7 @@ body {
 .cabecalho {
     display: flex;
     align-items: center;
-    gap: 24px; /* Aumenta o espaçamento entre a foto e o texto */
+    gap: 24px;
     margin-bottom: 24px;
     padding-bottom: 24px;
     border-bottom: 1px solid var(--border-color);
@@ -71,12 +71,20 @@ body {
     font-weight: 500;
 }
 
-/* Estilos para parágrafos */
-.paragrafo-sobre, .paragrafo-projeto, li {
-    text-indent: 2em;
+/* Estilos para parágrafos e lista de certificados */
+.paragrafo-sobre, 
+.paragrafo-projeto, 
+.experiencia-descricao,
+.academica-instituicao,
+.academica-periodo {
     text-align: justify;
-    line-height: 1.5; /* Espaçamento entre as linhas */
-    margin-bottom: 1.5rem; /* Margem inferior para separar os parágrafos */
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilo para indentação do parágrafo */
+.paragrafo-sobre, .paragrafo-projeto {
+    text-indent: 2em;
 }
 
 .projeto-item {
@@ -137,10 +145,10 @@ footer a:hover {
 /* Estilos dos tópicos */
 section {
     padding-top: 24px;
-    margin: 0 1rem; /* Margem nas laterais para afastar o conteúdo */
+    margin: 0 1rem;
 }
 
-h1, h2 {
+h1, h2, h3 {
     color: var(--text-color-primary);
     margin-bottom: 10px;
 }
@@ -150,6 +158,43 @@ h2 {
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--primary-color);
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+/* Novos estilos para a seção de experiência */
+.experiencia-item {
+    margin-bottom: 2rem;
+}
+
+.experiencia-item h3 {
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.experiencia-descricao {
+    text-align: justify;
+    line-height: 1.5;
+    margin-top: 0;
+}
+
+.lista-academica {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.academica-curso {
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-bottom: 0;
+}
+
+.academica-instituicao, .academica-periodo {
+    margin-top: 0.5rem;
+    font-size: 1em;
 }
 
 
@@ -293,5 +338,15 @@ a:focus, button:focus {
 
 .social-button.github:hover {
     background-color: #000;
+    transform: translateY(-2px);
+}
+
+/* Estilo para o botão de Experiência Corporativa */
+.social-button.trabalho-button {
+    background-color: var(--trabalho-color);
+}
+
+.social-button.trabalho-button:hover {
+    background-color: #003e8a;
     transform: translateY(-2px);
 }
